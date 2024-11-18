@@ -1,0 +1,182 @@
+[
+    {
+        "_id": "vch001",
+        "brand_name": "Tech Haven",
+        "rating": 4.5,
+        "description": "Get the latest gadgets at unbeatable prices.",
+        "brand_logo": "https://example.com/brand-logos/techhaven.png",
+        "coupons": [
+            {
+                "coupon_code": "TECH10",
+                "description": "10% off on all electronics",
+                "expiry_date": "2024-12-31",
+                "condition": "Minimum purchase of $100",
+                "coupon_type": "Discount"
+            },
+            {
+                "coupon_code": "FREEDEL",
+                "description": "Free delivery on orders above $50",
+                "expiry_date": "2024-11-30",
+                "condition": "Applicable on standard shipping",
+                "coupon_type": "Shipping"
+            }
+        ],
+        "shop_link": "https://example.com/techhaven",
+        "category": "Electronics",
+        "isSaleOn": true
+    },
+    {
+        "_id": "vch002",
+        "brand_name": "Style Hub",
+        "rating": 4.2,
+        "description": "Trendy fashion for everyone.",
+        "brand_logo": "https://example.com/brand-logos/stylehub.png",
+        "coupons": [
+            {
+                "coupon_code": "STYLE15",
+                "description": "15% off on all items",
+                "expiry_date": "2024-12-15",
+                "condition": "No minimum purchase required",
+                "coupon_type": "Discount"
+            },
+            {
+                "coupon_code": "SUMMER21",
+                "description": "Buy 2, Get 1 Free",
+                "expiry_date": "2024-08-31",
+                "condition": "Applicable on selected items",
+                "coupon_type": "BOGO"
+            }
+        ],
+        "shop_link": "https://example.com/stylehub",
+        "category": "Fashion",
+        "isSaleOn": false
+    },
+    {
+        "_id": "vch003",
+        "brand_name": "Grocery Mart",
+        "rating": 4.8,
+        "description": "Fresh groceries delivered to your doorstep.",
+        "brand_logo": "https://example.com/brand-logos/grocerymart.png",
+        "coupons": [
+            {
+                "coupon_code": "FRESH20",
+                "description": "20% off on fresh produce",
+                "expiry_date": "2024-11-30",
+                "condition": "Minimum purchase of $30",
+                "coupon_type": "Discount"
+            }
+        ],
+        "shop_link": "https://example.com/grocerymart",
+        "category": "Groceries",
+        "isSaleOn": true
+    },
+    {
+        "_id": "vch004",
+        "brand_name": "Bookworm's Paradise",
+        "rating": 4.7,
+        "description": "Explore a wide collection of books.",
+        "brand_logo": "https://example.com/brand-logos/bookworm.png",
+        "coupons": [
+            {
+                "coupon_code": "BOOK5",
+                "description": "5% off on all books",
+                "expiry_date": "2024-06-30",
+                "condition": "No minimum purchase required",
+                "coupon_type": "Discount"
+            },
+            {
+                "coupon_code": "READMORE",
+                "description": "10% off on orders above $50",
+                "expiry_date": "2024-09-30",
+                "condition": "Excludes gift cards",
+                "coupon_type": "Discount"
+            }
+        ],
+        "shop_link": "https://example.com/bookworm",
+        "category": "Books",
+        "isSaleOn": true
+    },
+    {
+        "_id": "vch005",
+        "brand_name": "Fitness Pro",
+        "rating": 4.3,
+        "description": "Your one-stop shop for fitness gear.",
+        "brand_logo": "https://example.com/brand-logos/fitnesspro.png",
+        "coupons": [
+            {
+                "coupon_code": "GYM20",
+                "description": "20% off on fitness equipment",
+                "expiry_date": "2024-12-31",
+                "condition": "Applicable on all items",
+                "coupon_type": "Discount"
+            }
+        ],
+        "shop_link": "https://example.com/fitnesspro",
+        "category": "Fitness",
+        "isSaleOn": false
+    },
+    {
+        "_id": "vch006",
+        "brand_name": "Beauty Bliss",
+        "rating": 4.6,
+        "description": "Premium beauty products at your fingertips.",
+        "brand_logo": "https://example.com/brand-logos/beautybliss.png",
+        "coupons": [
+            {
+                "coupon_code": "BEAUTY15",
+                "description": "15% off on skincare products",
+                "expiry_date": "2024-07-31",
+                "condition": "Minimum purchase of $40",
+                "coupon_type": "Discount"
+            }
+        ],
+        "shop_link": "https://example.com/beautybliss",
+        "category": "Beauty",
+        "isSaleOn": true
+    },
+    {
+        "_id": "vch007",
+        "brand_name": "Pet Essentials",
+        "rating": 4.4,
+        "description": "Everything your furry friends need.",
+        "brand_logo": "https://example.com/brand-logos/petessentials.png",
+        "coupons": [
+            {
+                "coupon_code": "PETCARE10",
+                "description": "10% off on pet food",
+                "expiry_date": "2024-05-31",
+                "condition": "No minimum purchase required",
+                "coupon_type": "Discount"
+            },
+            {
+                "coupon_code": "TOYFUN",
+                "description": "Buy 1, Get 1 Free on pet toys",
+                "expiry_date": "2024-03-31",
+                "condition": "Only on selected items",
+                "coupon_type": "BOGO"
+            }
+        ],
+        "shop_link": "https://example.com/petessentials",
+        "category": "Pet Supplies",
+        "isSaleOn": true
+    },
+    {
+        "_id": "vch008",
+        "brand_name": "Travel Time",
+        "rating": 4.5,
+        "description": "Plan your perfect getaway.",
+        "brand_logo": "https://example.com/brand-logos/traveltime.png",
+        "coupons": [
+            {
+                "coupon_code": "FLIGHT20",
+                "description": "20% off on flight bookings",
+                "expiry_date": "2024-10-31",
+                "condition": "Minimum booking of $200",
+                "coupon_type": "Discount"
+            }
+        ],
+        "shop_link": "https://example.com/traveltime",
+        "category": "Travel",
+        "isSaleOn": false
+    }
+]

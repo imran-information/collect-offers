@@ -1,16 +1,17 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import logo from '../../assets/icon.webp'
 
 const NavBar = () => {
     const links = <>
-        <li><NavLink to='/'>Home</NavLink></li>
-        <li><NavLink to='/brands'>Brands</NavLink></li>
-        <li><NavLink to='/profile'>Profile</NavLink></li>
-        <li><NavLink to='/about'>About Dev</NavLink></li>
+        <li className='text-base font-semibold'><NavLink to='/'>Home</NavLink></li>
+        <li className='text-base font-semibold'><NavLink to='/brands'>Brands</NavLink></li>
+        <li className='text-base font-semibold'><NavLink to='/profile'>Profile</NavLink></li>
+        <li className='text-base font-semibold'><NavLink to='/about'>About Dev</NavLink></li>
 
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-green-200">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -33,7 +34,10 @@ const NavBar = () => {
                         {links}
                     </ul>
                 </div>
-                <NavLink to="/" className=" text-xl">Welcome .....</NavLink>
+                <div>
+                    <NavLink to="/" className=" text-2xl font-semibold flex items-center gap-3">
+                        <img className='w-14' src={logo} alt="" /> Collect Offers</NavLink>
+                </div>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -41,7 +45,7 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <NavLink to="/login" className="btn">Login</NavLink>
+                <NavLink to="/login" className="btn text-base font-semibold">Login</NavLink>
             </div>
         </div>
     );

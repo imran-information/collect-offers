@@ -1,0 +1,158 @@
+[
+    {
+        "_id": "1a2b3c4d5e",
+        "brand_name": "Techie Gadgets",
+        "rating": 4.5,
+        "description": "Explore the latest in cutting-edge technology and gadgets.",
+        "brand_logo": "https://i.ibb.co.com/s9XWt01/download.jpg",
+        "coupons": [
+            {
+                "coupon_code": "TECH10",
+                "description": "10% off on all electronics.",
+                "expiry_date": "2024-12-31",
+                "condition": "Minimum purchase of $50 required.",
+                "coupon_type": "Percentage"
+            },
+            {
+                "coupon_code": "FREEDEL",
+                "description": "Free delivery on orders above $20.",
+                "expiry_date": "2024-06-30",
+                "condition": "Valid for online orders only.",
+                "coupon_type": "Free Delivery"
+            }
+        ],
+        "shop_link": "https://techiegadgets.com",
+        "category": "Electronics",
+        "isSaleOn": true
+    },
+    {
+        "_id": "6f7g8h9i0j",
+        "brand_name": "Fashion Haven",
+        "rating": 4.7,
+        "description": "Stay trendy with our exclusive fashion collections.",
+        "brand_logo": "https://i.ibb.co.com/4jQxfbH/download.jpg",
+        "coupons": [
+            {
+                "coupon_code": "STYLE20",
+                "description": "20% off on your first order.",
+                "expiry_date": "2025-01-15",
+                "condition": "New customers only.",
+                "coupon_type": "Percentage"
+            },
+            {
+                "coupon_code": "BOGO50",
+                "description": "Buy one, get one 50% off.",
+                "expiry_date": "2024-11-30",
+                "condition": "Valid on select items.",
+                "coupon_type": "BOGO"
+            }
+        ],
+        "shop_link": "https://fashionhaven.com",
+        "category": "Clothing",
+        "isSaleOn": false
+    },
+    {
+        "_id": "7k8l9m0n1o",
+        "brand_name": "Fitness Pro",
+        "rating": 4.3,
+        "description": "Your go-to store for premium fitness gear and accessories.",
+        "brand_logo": "https://i.ibb.co.com/hFKGtLS/download.png",
+        "coupons": [
+            {
+                "coupon_code": "FIT15",
+                "description": "15% off on all fitness equipment.",
+                "expiry_date": "2025-03-01",
+                "condition": "No minimum purchase required.",
+                "coupon_type": "Percentage"
+            },
+            {
+                "coupon_code": "GYMPASS",
+                "description": "Free gym bag with orders over $100.",
+                "expiry_date": "2024-12-15",
+                "condition": "Limited to the first 500 customers.",
+                "coupon_type": "Free Item"
+            }
+        ],
+        "shop_link": "https://fitnesspro.com",
+        "category": "Health & Fitness",
+        "isSaleOn": true
+    },
+    {
+        "_id": "2p3q4r5s6t",
+        "brand_name": "Gourmet Delights",
+        "rating": 4.8,
+        "description": "Delicious treats and gourmet food items to savor.",
+        "brand_logo": "https://i.ibb.co.com/jTZKW78/download.jpg",
+        "coupons": [
+            {
+                "coupon_code": "YUMMY10",
+                "description": "10% off on all gourmet items.",
+                "expiry_date": "2025-05-10",
+                "condition": "Valid for online orders only.",
+                "coupon_type": "Percentage"
+            },
+            {
+                "coupon_code": "SNACK50",
+                "description": "50% off on select snacks.",
+                "expiry_date": "2024-09-20",
+                "condition": "Limited stock available.",
+                "coupon_type": "Percentage"
+            }
+        ],
+        "shop_link": "https://gourmetdelights.com",
+        "category": "Food & Beverage",
+        "isSaleOn": false
+    },
+    {
+        "_id": "9u0v1w2x3y",
+        "brand_name": "Travel Essentials",
+        "rating": 4.6,
+        "description": "All your travel needs in one place.",
+        "brand_logo": "https://i.ibb.co.com/93Qcx11/download.png",
+        "coupons": [
+            {
+                "coupon_code": "TRAVEL30",
+                "description": "30% off on travel accessories.",
+                "expiry_date": "2024-08-31",
+                "condition": "Valid on orders above $30.",
+                "coupon_type": "Percentage"
+            },
+            {
+                "coupon_code": "PACKFREE",
+                "description": "Free packing cubes with orders over $75.",
+                "expiry_date": "2024-07-15",
+                "condition": "Limited to the first 100 customers.",
+                "coupon_type": "Free Item"
+            }
+        ],
+        "shop_link": "https://travelessentials.com",
+        "category": "Travel",
+        "isSaleOn": true
+    },
+    {
+        "_id": "4z5a6b7c8d",
+        "brand_name": "Beauty Bliss",
+        "rating": 4.9,
+        "description": "Enhance your beauty with our premium products.",
+        "brand_logo": "https://i.ibb.co.com/m6tDqSd/download.png",
+        "coupons": [
+            {
+                "coupon_code": "GLOW25",
+                "description": "25% off on skincare products.",
+                "expiry_date": "2024-11-25",
+                "condition": "Valid for online and in-store purchases.",
+                "coupon_type": "Percentage"
+            },
+            {
+                "coupon_code": "FREEBRUSH",
+                "description": "Free makeup brush set with orders over $50.",
+                "expiry_date": "2024-10-01",
+                "condition": "While supplies last.",
+                "coupon_type": "Free Item"
+            }
+        ],
+        "shop_link": "https://beautybliss.com",
+        "category": "Beauty & Personal Care",
+        "isSaleOn": true
+    }
+]

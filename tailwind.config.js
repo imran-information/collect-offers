@@ -5,7 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    fontFamily: {
+      "Work Sans": [
+        "Work Sans", "sans - serif",
+      ]
+    }
   },
   plugins: [
     require('daisyui'),
