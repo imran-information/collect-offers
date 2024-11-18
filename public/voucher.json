@@ -4,10 +4,10 @@
         "brand_name": "Tech Haven",
         "rating": 4.5,
         "description": "Get the latest gadgets at unbeatable prices.",
-        "brand_logo": "https://example.com/brand-logos/techhaven.png",
+        "brand_logo": "https://i.ibb.co.com/9gPTGxG/download.jpg",
+        "coupon_code": "TECH10",
         "coupons": [
             {
-                "coupon_code": "TECH10",
                 "description": "10% off on all electronics",
                 "expiry_date": "2024-12-31",
                 "condition": "Minimum purchase of $100",
@@ -30,10 +30,10 @@
         "brand_name": "Style Hub",
         "rating": 4.2,
         "description": "Trendy fashion for everyone.",
-        "brand_logo": "https://example.com/brand-logos/stylehub.png",
+        "brand_logo": "https://i.ibb.co.com/QNMYBDG/images.png",
+        "coupon_code": "STYLE15",
         "coupons": [
             {
-                "coupon_code": "STYLE15",
                 "description": "15% off on all items",
                 "expiry_date": "2024-12-15",
                 "condition": "No minimum purchase required",
@@ -56,10 +56,10 @@
         "brand_name": "Grocery Mart",
         "rating": 4.8,
         "description": "Fresh groceries delivered to your doorstep.",
-        "brand_logo": "https://example.com/brand-logos/grocerymart.png",
+        "brand_logo": "https://i.ibb.co.com/vxVWVVd/images.jpg",
+        "coupon_code": "FRESH20",
         "coupons": [
             {
-                "coupon_code": "FRESH20",
                 "description": "20% off on fresh produce",
                 "expiry_date": "2024-11-30",
                 "condition": "Minimum purchase of $30",
@@ -75,10 +75,10 @@
         "brand_name": "Bookworm's Paradise",
         "rating": 4.7,
         "description": "Explore a wide collection of books.",
-        "brand_logo": "https://example.com/brand-logos/bookworm.png",
+        "brand_logo": "https://i.ibb.co.com/4NgZyzx/download.jpg",
+        "coupon_code": "BOOK5",
         "coupons": [
             {
-                "coupon_code": "BOOK5",
                 "description": "5% off on all books",
                 "expiry_date": "2024-06-30",
                 "condition": "No minimum purchase required",
@@ -101,10 +101,10 @@
         "brand_name": "Fitness Pro",
         "rating": 4.3,
         "description": "Your one-stop shop for fitness gear.",
-        "brand_logo": "https://example.com/brand-logos/fitnesspro.png",
+        "brand_logo": "https://i.ibb.co.com/Kzd8vkP/download.jpg",
+        "coupon_code": "GYM20",
         "coupons": [
             {
-                "coupon_code": "GYM20",
                 "description": "20% off on fitness equipment",
                 "expiry_date": "2024-12-31",
                 "condition": "Applicable on all items",
@@ -120,10 +120,10 @@
         "brand_name": "Beauty Bliss",
         "rating": 4.6,
         "description": "Premium beauty products at your fingertips.",
-        "brand_logo": "https://example.com/brand-logos/beautybliss.png",
+        "brand_logo": "https://i.ibb.co.com/pJbTdtp/download.png",
+        "coupon_code": "BEAUTY15",
         "coupons": [
             {
-                "coupon_code": "BEAUTY15",
                 "description": "15% off on skincare products",
                 "expiry_date": "2024-07-31",
                 "condition": "Minimum purchase of $40",
@@ -139,10 +139,10 @@
         "brand_name": "Pet Essentials",
         "rating": 4.4,
         "description": "Everything your furry friends need.",
-        "brand_logo": "https://example.com/brand-logos/petessentials.png",
+        "brand_logo": "https://i.ibb.co.com/b3386bK/download.jpg",
+        "coupon_code": "PETCARE10",
         "coupons": [
             {
-                "coupon_code": "PETCARE10",
                 "description": "10% off on pet food",
                 "expiry_date": "2024-05-31",
                 "condition": "No minimum purchase required",
@@ -165,10 +165,10 @@
         "brand_name": "Travel Time",
         "rating": 4.5,
         "description": "Plan your perfect getaway.",
-        "brand_logo": "https://example.com/brand-logos/traveltime.png",
+        "brand_logo": "https://i.ibb.co.com/F7pCGTD/images.jpg",
+        "coupon_code": "FLIGHT20",
         "coupons": [
             {
-                "coupon_code": "FLIGHT20",
                 "description": "20% off on flight bookings",
                 "expiry_date": "2024-10-31",
                 "condition": "Minimum booking of $200",
