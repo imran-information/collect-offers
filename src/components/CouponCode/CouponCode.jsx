@@ -17,9 +17,9 @@ const CouponCode = () => {
         handleRedirect()
     }
     return (
-        <div className='w-10/12 mx-auto py-5 text-center'>
+        <div className='w-10/12 mx-auto my-5 text-center bg-green-50'>
             <div className="flex flex-col justify-center items-center">
-                <h3 className='text-3xl font-semibold pb-5'>{brand_name}</h3>
+                <h3 className='text-3xl font-semibold py-5'>{brand_name}</h3>
                 <img className='w-96 rounded border ' src={brand_logo} alt="" />
                 <div>
                     <ReactStars
@@ -30,24 +30,11 @@ const CouponCode = () => {
                     />
                 </div>
             </div>
-            {/* {
-                "coupon_code": "TECH10",
-                "description": "10% off on all electronics.",
-                "expiry_date": "2024-12-31",
-                "condition": "Minimum purchase of $50 required.",
-                "coupon_type": "Percentage"
-            },
-            {
-                "coupon_code": "FREEDEL",
-                "description": "Free delivery on orders above $20.",
-                "expiry_date": "2024-06-30",
-                "condition": "Valid for online orders only.",
-                "coupon_type": "Free Delivery"
-            } */}
+           
             <h3 className='text-2xl font-semibold pb-5'>All Coupons</h3>
-            <div className="md:flex justify-around  mx-auto py-10">
+            <div className="md:flex justify-around gap-2 mx-auto py-10">
                 {
-                    coupons.map(coup => <div className="card bg-neutral text-neutral-content w-96">
+                    coupons.map(coup => <div className="card bg-neutral text-neutral-content">
                         <div className="card-body items-center text-center">
                             <h2 className="card-title">{coup.description}</h2>
                             <p>{coup.condition}</p>

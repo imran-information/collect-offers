@@ -5,6 +5,9 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    backgroundImage: {
+      img: "url('../collect-offers/src/assets/image.png')",
+    },
     fontFamily: {
       "Work Sans": [
         "Work Sans", "sans - serif",

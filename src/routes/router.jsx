@@ -8,6 +8,7 @@ import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
 import CouponCode from "../components/CouponCode/CouponCode";
+import Profile from "../components/Profile/Profile";
 
 const router = createBrowserRouter([
     {
@@ -69,6 +70,12 @@ const router = createBrowserRouter([
                     const singleCoupon = couponData.find(couponData => couponData._id == params.id)
                     return singleCoupon
                 }
+            },
+            {
+                path: '/profile',
+                element: <PrivateRoute>
+                    <Profile></Profile>
+                </PrivateRoute>
             }
         ]
     }
