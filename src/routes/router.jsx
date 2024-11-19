@@ -4,6 +4,8 @@ import Home from "../components/Home/Home";
 import BrandDetails from "../components/BrandDeatils/BrandDetails";
 import VoucherDetails from "../components/VoucherDetails/VoucherDetails";
 import Brands from "../components/Brands/Brands";
+import Login from "../components/Login/Login";
+import Register from "../components/Register/Register";
 
 const router = createBrowserRouter([
     {
@@ -44,6 +46,14 @@ const router = createBrowserRouter([
                 path: '/brands',
                 element: <Brands></Brands>,
                 loader: () => fetch('/coupons.json')
+            },
+            {
+                path: '/login',
+                element: <Login></Login>
+            },
+            {
+                path: '/register',
+                element: <Register></Register>
             }
         ]
     }
