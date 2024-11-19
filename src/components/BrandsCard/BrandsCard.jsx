@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ReactStars from "react-rating-stars-component";
+import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 
 
 const BrandsCard = ({ coupon }) => {
     const { brand_logo, brand_name, rating, description, isSaleOn } = coupon;
-
+    const { user } = useContext(AuthContext)
 
     return (
         <div className="card lg:card-side bg-base-100 shadow-xl">
@@ -31,7 +33,7 @@ const BrandsCard = ({ coupon }) => {
                 </div>
                 <div className="">
                     <p className='text-lg font-semibold text-green-600'> {isSaleOn ? 'Sale Is On' : ''} </p>
-                    <button className="btn btn-primary">View Coupons</button>
+                    <NavLink to='/brandDetails' className="btn btn-primary">View Coupons</NavLink>
                 </div>
 
             </div>

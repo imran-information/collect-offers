@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../assets/icon.webp'
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const NavBar = () => {
+    const { user, handleSignOut } = useContext(AuthContext)
+
+
+    const handleSignOutUser = () => {
+        handleSignOut()
+    }
     const links = <>
         <li className='text-base font-semibold'><NavLink to='/'>Home</NavLink></li>
         <li className='text-base font-semibold'><NavLink to='/brands'>Brands</NavLink></li>
@@ -45,7 +52,9 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <NavLink to="/login" className="btn text-base font-semibold">Login</NavLink>
+                {
+                    user?.email ? <NavLink onClick={handleSignOutUser} to="/login" className="btn text-base font-semibold">Log Out</NavLink> : <NavLink to="/login" className="btn text-base font-semibold">Login</NavLink>
+                }
             </div>
         </div>
     );

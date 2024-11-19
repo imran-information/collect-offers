@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import BrandsCard from '../BrandsCard/BrandsCard';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Brands = () => {
     const couponsData = useLoaderData()
-    console.log(couponsData);
+    const { user } = useContext(AuthContext)
 
     return (
         <div className='w-10/12 mx-auto '>

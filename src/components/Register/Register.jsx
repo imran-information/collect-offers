@@ -1,15 +1,39 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Register = () => {
+    const { handleSignUpUser } = useContext(AuthContext)
+    const [error, setError] = useState({})
+    const location = useLocation()
+    const navigate = useNavigate()
+
     const handleSubmit = (e) => {
         e.preventDefault()
         const name = e.target.name.value;
         const photo = e.target.photo.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
+        if (password.length < 6) {
+            return setError({ ...error, password: "Password must be 6 characters long" })
+        }
+        if (!/[A - Z]/.test(password)) {
+            return setError({ ...error, password: "Password must contain at least one Uppercase letter" })
 
-        console.log(name, photo, email, password);
+        }
+        if (!/[a - z]/.test(password)) {
+            return setError({ ...error, password: "Password must contain at least one  Lowercase letter" })
+
+        }
+
+        handleSignUpUser(email, password)
+            .then(res => {
+                console.log(res.user);
+                navigate(location?.state ? location.state : '/')
+            }).catch(err => {
+                setError({ ...error, password: err.code })
+
+            })
 
     }
     return (
@@ -47,6 +71,12 @@ const Register = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+                            {
+                                error?.password && <label className="label text-sm text-red-500">
+                                    {error?.password}
+                                </label>
+                            }
+
                         </div>
                         <div className="form-control mt-6">
                             <button className="btn btn-primary">Sign Up</button>

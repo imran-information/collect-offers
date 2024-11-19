@@ -1,13 +1,35 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { NavLink, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Login = () => {
+    const { handleSignInUser, handleGoogleSignInUser } = useContext(AuthContext)
+    const location = useLocation()
+    const navigate = useNavigate()
+    const [error, setError] = useState({})
     const handleSubmit = (e) => {
         e.preventDefault()
         const email = e.target.email.value;
         const password = e.target.password.value;
+        handleSignInUser(email, password)
+            .then(res => {
 
+                navigate(location?.state ? location.state : '/')
+            }).catch(err => {
+                setError({ ...error, login: err.code })
 
+            })
+
+    }
+    const handleGoogleLogin = () => {
+        handleGoogleSignInUser()
+            .then(res => {
+
+                navigate(location?.state ? location.state : '/')
+            }).catch(error => {
+                setError({ ...error, login: err.code })
+
+            })
     }
     return (
         <div className="hero py-10">
@@ -18,11 +40,11 @@ const Login = () => {
                 </div>
                 <div className="card bg-base-100  w-[500px]   shrink-0 shadow-2xl">
                     <h1 className="text-4xl font-bold pt-5 text-center">Login Now!</h1>
-
+                    <div onClick={handleGoogleLogin} className="form-control px-8 pt-10">
+                        <button className="btn ">Login with Google</button>
+                    </div>
                     <form onSubmit={handleSubmit} className="card-body">
-                        <div className="form-control ">
-                            <button className="btn ">Login with Google</button>
-                        </div>
+
                         <p className='text-center pt-3'>or login with email:</p>
                         <div className="form-control">
                             <label className="label">
@@ -35,6 +57,11 @@ const Login = () => {
                                 <span className="label-text">Password</span>
                             </label>
                             <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+                            {
+                                error?.login && <label className="label text-sm text-red-500">
+                                    {error?.login}
+                                </label>
+                            }
                             <label className="label">
                                 <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                             </label>

@@ -6,6 +6,8 @@ import VoucherDetails from "../components/VoucherDetails/VoucherDetails";
 import Brands from "../components/Brands/Brands";
 import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
+import PrivateRoute from "../components/PrivateRoute/PrivateRoute";
+import CouponCode from "../components/CouponCode/CouponCode";
 
 const router = createBrowserRouter([
     {
@@ -29,7 +31,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/brandDetails',
-                element: <BrandDetails></BrandDetails>
+                element: <PrivateRoute>
+                    <BrandDetails></BrandDetails>
+                </PrivateRoute>
             },
             {
                 path: '/voucherDetails/:id',
@@ -40,7 +44,6 @@ const router = createBrowserRouter([
                     const singleVoucher = voucherData.find(voucher => voucher._id == params.id)
                     return singleVoucher
                 }
-
             },
             {
                 path: '/brands',
@@ -54,6 +57,18 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/coupon/:id',
+                element: <PrivateRoute>
+                    <CouponCode></CouponCode>
+                </PrivateRoute>,
+                loader: async ({ params }) => {
+                    const couponRes = await fetch('/coupons.json')
+                    const couponData = await couponRes.json()
+                    const singleCoupon = couponData.find(couponData => couponData._id == params.id)
+                    return singleCoupon
+                }
             }
         ]
     }
