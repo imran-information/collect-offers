@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout";
 import Home from "../components/Home/Home";
 import BrandDetails from "../components/BrandDeatils/BrandDetails";
 import VoucherDetails from "../components/VoucherDetails/VoucherDetails";
+import Brands from "../components/Brands/Brands";
 
 const router = createBrowserRouter([
     {
@@ -14,8 +15,8 @@ const router = createBrowserRouter([
                 element: <Home></Home>,
                 loader: async () => {
                     const couponsRes = await fetch('/coupons.json')
-                    const couponsData = await couponsRes.json()
-
+                    const data = await couponsRes.json()
+                    const couponsData = await data.filter(coupon => coupon.isSaleOn == true)
 
                     const voucherRes = await fetch('/voucher.json')
                     const voucherData = await voucherRes.json()
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
                     return singleVoucher
                 }
 
+            },
+            {
+                path: '/brands',
+                element: <Brands></Brands>,
+                loader: () => fetch('/coupons.json')
             }
         ]
     }
