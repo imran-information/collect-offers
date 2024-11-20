@@ -1,9 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { updateProfile } from 'firebase/auth';
+import { auth } from '../../firebase/firebase.init';
 
 const Register = () => {
-    const { handleSignUpUser } = useContext(AuthContext)
+    const { handleSignUpUser, updateUserProfile } = useContext(AuthContext)
     const [error, setError] = useState({})
     const location = useLocation()
     const navigate = useNavigate()
@@ -32,6 +34,19 @@ const Register = () => {
                 navigate(location?.state ? location.state : '/')
             }).catch(err => {
                 setError({ ...error, password: err.code })
+
+            })
+        const profile = {
+            displayName: name,
+            photoURL: photo
+        }
+
+        updateProfile(auth.currentUser, profile)
+            .then(res => {
+                console.log(res.user);
+
+            }).catch(error => {
+                console.log(error.code);
 
             })
 
