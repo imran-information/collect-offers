@@ -1,19 +1,49 @@
 import React from 'react';
-import AwesomeSlider from 'react-awesome-slider';
-// import AwsSliderStyles from 'react-awesome-slider/src/styles.scss';
+
 
 
 const Banner = () => {
 
     return (
-        <div>
-            <AwesomeSlider >
-                <div data-src="https://banner2.cleanpng.com/20180501/abw/avdegic5l.webp" />
-                <div data-src="https://banner2.cleanpng.com/20180501/abw/avdegic5l.webp" />
-                <div data-src="https://banner2.cleanpng.com/20180501/abw/avdegic5l.webp" />
-            </AwesomeSlider>
-
+        <div className="carousel h-[900px] w-full py-5">
+            <div id="slide1" className="carousel-item relative w-full">
+                <img
+                    src="https://img.freepik.com/free-vector/creative-sale-banner-your-business_1017-15189.jpg?uid=R154519964&ga=GA1.1.1636464796.1729528393&semt=ais_hybrid"
+                    className="w-full" />
+                <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                    <a href="#slide4" className="btn btn-circle">❮</a>
+                    <a href="#slide2" className="btn btn-circle">❯</a>
+                </div>
+            </div>
+            <div id="slide2" className="carousel-item relative w-full">
+                <img
+                    src="https://png.pngtree.com/png-vector/20240401/ourlarge/pngtree-special-offer-for-you-design-png-image_12256494.png"
+                    className="w-full" />
+                <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                    <a href="#slide1" className="btn btn-circle">❮</a>
+                    <a href="#slide3" className="btn btn-circle">❯</a>
+                </div>
+            </div>
+            <div id="slide3" className="carousel-item relative w-full">
+                <img
+                    src="https://img.freepik.com/free-vector/creative-sale-banner-your-business_1017-15189.jpg?uid=R154519964&ga=GA1.1.1636464796.1729528393&semt=ais_hybrid"
+                    className="w-full" />
+                <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                    <a href="#slide2" className="btn btn-circle">❮</a>
+                    <a href="#slide4" className="btn btn-circle">❯</a>
+                </div>
+            </div>
+            <div id="slide4" className="carousel-item relative w-full">
+                <img
+                    src="https://img.freepik.com/free-vector/black-friday-super-sale-design-template_1150-52788.jpg?uid=R154519964&ga=GA1.1.1636464796.1729528393&semt=ais_hybrid"
+                    className="w-full" />
+                <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
+                    <a href="#slide3" className="btn btn-circle">❮</a>
+                    <a href="#slide1" className="btn btn-circle">❯</a>
+                </div>
+            </div>
         </div>
+
     );
 };
 

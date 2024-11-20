@@ -31,10 +31,16 @@ const router = createBrowserRouter([
 
             },
             {
-                path: '/brandDetails',
+                path: '/brandDetails/:id',
                 element: <PrivateRoute>
                     <BrandDetails></BrandDetails>
-                </PrivateRoute>
+                </PrivateRoute>,
+                loader: async ({ params }) => {
+                    const couponsRes = await fetch('/coupons.json')
+                    const couponsData = await couponsRes.json()
+                    const singleCoupon = couponsData.find(coupon => coupon._id == params.id)
+                    return singleCoupon
+                }
             },
             {
                 path: '/voucherDetails/:id',

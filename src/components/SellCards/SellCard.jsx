@@ -6,7 +6,7 @@ const SellCard = ({ coupon }) => {
     const { brand_logo, brand_name, coupons, category, _id } = coupon
 
     return (
-        <NavLink to={`/coupon/${_id}`} className="card card-compact bg-base-100 w-96 rounded border">
+        <NavLink to={`/coupon/${_id}`} className="card card-compact bg-base-100  rounded border">
             <figure>
                 <img className='w-full h-60'
                     src={brand_logo}

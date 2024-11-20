@@ -18,7 +18,7 @@ const NavBar = () => {
 
     </>
     return (
-        <div className="navbar bg-green-200">
+        <div className="navbar  md:px-20 fixed backdrop-blur-lg top-0 z-50">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -43,7 +43,7 @@ const NavBar = () => {
                 </div>
                 <div>
                     <NavLink to="/" className=" text-2xl font-semibold flex items-center gap-3">
-                        <img className='w-14' src={logo} alt="" /> Collect Offers</NavLink>
+                        <img className='w-14' src={logo} alt="" /> <span className='text-accent text-2xl'>Collect Offers</span></NavLink>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -53,7 +53,7 @@ const NavBar = () => {
             </div>
             <div className="navbar-end">
                 {
-                    user?.email ? <NavLink onClick={handleSignOutUser} to="/login" className="btn text-base font-semibold">Log Out</NavLink> : <NavLink to="/login" className="btn text-base font-semibold">Login</NavLink>
+                    user?.email ? <><NavLink to='/profile'><img className='w-14 border border-accent p-1 rounded-full mr-5' src={user.photoURL} alt="" /></NavLink> <NavLink onClick={handleSignOutUser} to="/login" className="btn btn-neutral text-base font-semibold">Log Out</NavLink> </> : <NavLink to="/login" className="btn text-base font-semibold">Login</NavLink>
                 }
             </div>
         </div>

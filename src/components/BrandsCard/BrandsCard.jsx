@@ -6,14 +6,14 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 
 
 const BrandsCard = ({ coupon }) => {
-    const { brand_logo, brand_name, rating, description, isSaleOn } = coupon;
+    const { brand_logo, brand_name, rating, description, isSaleOn, _id } = coupon;
     const { user } = useContext(AuthContext)
 
     return (
         <div className="card lg:card-side bg-base-100 shadow-xl">
 
-            <div className="card-body flex-row justify-between items-center">
-                <div className="">
+            <div className="card-body md:flex-row justify-between items-center">
+                <div className="border p-5 rounded">
                     <figure>
                         <img className='border w-72 '
                             src={brand_logo}
@@ -31,9 +31,11 @@ const BrandsCard = ({ coupon }) => {
                     <h2 className="card-title pt-2 text-2xl justify-center">{brand_name}</h2>
                     <p className='py-2 text-lg font-semibold text-gray-500'>{description}</p>
                 </div>
-                <div className="">
+                <div className="flex flex-col justify-center items-center gap-2">
                     <p className='text-lg font-semibold text-green-600'> {isSaleOn ? 'Sale Is On' : ''} </p>
-                    <NavLink to='/brandDetails' className="btn btn-primary">View Coupons</NavLink>
+                    {
+                        isSaleOn && <NavLink to={`/brandDetails/${_id}`} className="btn btn-neutral">View Coupons</NavLink>
+                    }
                 </div>
 
             </div>
