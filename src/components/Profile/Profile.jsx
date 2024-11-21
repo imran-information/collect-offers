@@ -14,7 +14,7 @@ const Profile = () => {
         e.preventDefault()
         const name = e.target.name.value
         const photo = e.target.photo.value
-        console.log(name, photo);
+       
 
         updateUserProfile(name, photo)
             .then(res => {
