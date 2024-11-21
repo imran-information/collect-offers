@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { Helmet } from 'react-helmet-async';
 
 const Profile = () => {
     const { user, handleSignOut, updateUserProfile } = useContext(AuthContext)
@@ -17,10 +19,21 @@ const Profile = () => {
         updateUserProfile(name, photo)
             .then(res => {
                 navigate('/')
+                toast.success("Profile Updated !", {
+                    position: "top-center"
+                });
+            })
+            .catch(error => {
+                toast.warn("Please try again...!", {
+                    position: "top-center"
+                });
             })
     }
     return (
         <div className='bg-img w-10/12 mx-auto flex justify-center py-20'>
+            <Helmet>
+                <title>Coupon Collecting | Profile</title>
+            </Helmet>
             <div className="card bg-base-100 w-96 shadow-xl">
                 <div className="card-body text-center">
                     <h2 className=" text-xl font-semibold py-5 text-center">{user.email}</h2>

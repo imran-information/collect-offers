@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useLoaderData } from 'react-router-dom';
 
 const VoucherDetails = () => {
@@ -12,6 +13,9 @@ const VoucherDetails = () => {
     }
     return (
         <div className='w-10/12 mx-auto  flex justify-center py-20'>
+            <Helmet>
+                <title>Coupon Collecting | Voucher Details</title>
+            </Helmet>
             <div className="card bg-base-100 image-full w-[80%] shadow-xl">
                 <figure>
                     <img className='w-[50%]'

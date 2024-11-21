@@ -2,7 +2,9 @@ import React, { useContext, useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
-
+import { toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from 'react-helmet-async';
 const Login = () => {
     const { handleSignInUser, handleGoogleSignInUser } = useContext(AuthContext)
     const [toggle, setToggle] = useState(false)
@@ -16,10 +18,15 @@ const Login = () => {
         const password = e.target.password.value;
         handleSignInUser(email, password)
             .then(res => {
-
+                toast.success("login successfully !", {
+                    position: "top-center"
+                });
                 navigate(location?.state ? location.state : '/')
             }).catch(err => {
                 setError({ ...error, login: err.code })
+                toast.error("invalid information..! try again ", {
+                    position: "top-left"
+                });
 
             })
 
@@ -27,11 +34,15 @@ const Login = () => {
     const handleGoogleLogin = () => {
         handleGoogleSignInUser()
             .then(res => {
-
+                toast.success("login successfully !", {
+                    position: "top-center"
+                });
                 navigate(location?.state ? location.state : '/')
             }).catch(error => {
                 setError({ ...error, login: err.code })
-
+                toast.warn("Please try again...!", {
+                    position: "top-center"
+                });
             })
     }
 
@@ -39,9 +50,12 @@ const Login = () => {
 
     return (
         <div className="hero py-10">
+            <Helmet>
+                <title>Coupon Collecting | Login </title>
+            </Helmet>
             <div className="hero-content flex-col">
                 <div className="text-center ">
-                    <h1 className="text-4xl font-bold pb-10">Welcome To Coupon Collecting</h1>
+                    <h1 className="text-4xl text-accent  font-bold pb-10">Welcome To Coupon Collecting</h1>
 
                 </div>
                 <div className="card bg-base-100  w-[500px]   shrink-0 shadow-2xl">

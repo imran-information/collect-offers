@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import ReactStars from "react-rating-stars-component";
+import { Helmet } from 'react-helmet-async';
 
 const CouponCode = () => {
     const singleCoupon = useLoaderData()
@@ -18,6 +19,9 @@ const CouponCode = () => {
     }
     return (
         <div className='w-10/12 mx-auto my-5 text-center bg-green-50'>
+             <Helmet>
+                <title>Coupon Collecting | Coupon Code {brand_name}</title>
+            </Helmet>
             <div className="flex flex-col justify-center items-center">
                 <h3 className='text-3xl font-semibold py-5'>{brand_name}</h3>
                 <img className='w-96 rounded border ' src={brand_logo} alt="" />

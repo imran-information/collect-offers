@@ -2,7 +2,9 @@ import React, { useContext, useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { FaGoogle } from 'react-icons/fa';
-
+import { toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
     const { handleSignUpUser, updateUserProfile, handleGoogleSignInUser } = useContext(AuthContext)
@@ -30,35 +32,48 @@ const Register = () => {
 
         handleSignUpUser(email, password)
             .then(res => {
-                console.log(res.user);
+                toast.success("SignUp successfully !", {
+                    position: "top-center"
+                });
                 navigate(location?.state ? location.state : '/')
                 updateUserProfile(name, photo)
                     .then(res => {
 
                     }).catch(err => {
 
-
-
                     })
             }).catch(err => {
                 setError({ ...error, password: err.code })
 
             })
+    }
 
-
-
-
-
+    const handleGoogleLogIn = () => {
+        handleGoogleSignInUser()
+            .then(res => {
+                toast.success("login successfully !", {
+                    position: "top-center"
+                });
+                navigate(location?.state ? location.state : '/')
+            }).catch(error => {
+                setError({ ...error, login: err.code })
+                toast.warn("Please try again...!", {
+                    position: "top-center"
+                });
+            })
     }
     return (
         <div className="hero py-10">
+             <Helmet>
+                <title>Coupon Collecting | Register </title>
+            </Helmet>
             <div className="hero-content flex-col">
 
                 <div className="card bg-base-100  w-[500px]   shrink-0 shadow-2xl">
                     <h1 className="text-4xl font-bold py-8 text-center">Sign up for free</h1>
 
                     <div className=" px-8 w-full">
-                        <button onClick={handleGoogleSignInUser} className="btn px-5 w-full btn-outline"><FaGoogle className='font-bold text-2xl'></FaGoogle> Continue with Google</button>
+                        <button onClick={handleGoogleLogIn} className="btn px-5 w-full btn-outline"><FaGoogle className='font-bold text-2xl'></FaGoogle> Continue with Google</button>
                     </div>
                     <form onSubmit={handleSubmit} className="card-body">
                         <div className="form-control ">

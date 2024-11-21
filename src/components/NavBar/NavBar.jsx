@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../../assets/icon.webp'
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { toast } from 'react-toastify';
 
 const NavBar = () => {
     const { user, handleSignOut } = useContext(AuthContext)
@@ -9,6 +10,17 @@ const NavBar = () => {
 
     const handleSignOutUser = () => {
         handleSignOut()
+            .then(res => {
+                toast.info("Log Out successfully !", {
+                    position: "top-center"
+                });
+
+            }).catch(error => {
+
+                toast.warn("Please try again...!", {
+                    position: "top-center"
+                });
+            })
     }
     const links = <>
         <li className='text-base font-semibold'><NavLink to='/'>Home</NavLink></li>
@@ -43,7 +55,7 @@ const NavBar = () => {
                 </div>
                 <div>
                     <NavLink to="/" className=" text-2xl font-semibold flex items-center gap-3">
-                        <img className='w-14' src={logo} alt="" /> <span className='text-accent text-2xl'>Collect Offers</span></NavLink>
+                        <img className='w-14' src={logo} alt="" /> <span className='text-accent text-2xl'>Coupon Collecting</span></NavLink>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">

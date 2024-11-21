@@ -7,6 +7,7 @@ import VoucherCodes from '../VoucherCodes/VoucherCodes';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 
 
@@ -24,6 +25,9 @@ const Home = () => {
             data-aos-mirror="true"
             data-aos-once="false"
             data-aos-anchor-placement="top-center">
+            <Helmet>
+                <title>Coupon Collecting | Home</title>
+            </Helmet>
             {
                 user && <h1 className='text-7xl  text-center pb-5'>Welcome <span className='text-accent'>{user.displayName}</span>!</h1>
             }
