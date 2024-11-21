@@ -37,7 +37,7 @@ const AuthProvider = ({ children }) => {
             displayName: name,
             photoURL: photo
         }
-        updateProfile(auth.currentUser, profile)
+        return updateProfile(auth.currentUser, profile)
     }
 
     useEffect(() => {
