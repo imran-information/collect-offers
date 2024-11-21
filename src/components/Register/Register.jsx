@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { FaGoogle } from 'react-icons/fa';
 
 
 const Register = () => {
-    const { handleSignUpUser, updateUserProfile } = useContext(AuthContext)
+    const { handleSignUpUser, updateUserProfile, handleGoogleSignInUser } = useContext(AuthContext)
     const [error, setError] = useState({})
     const location = useLocation()
     const navigate = useNavigate()
@@ -54,13 +55,16 @@ const Register = () => {
             <div className="hero-content flex-col">
 
                 <div className="card bg-base-100  w-[500px]   shrink-0 shadow-2xl">
-                    <h1 className="text-4xl font-bold pt-5 text-center">Sign up for free</h1>
+                    <h1 className="text-4xl font-bold py-8 text-center">Sign up for free</h1>
 
+                    <div className=" px-8 w-full">
+                        <button onClick={handleGoogleSignInUser} className="btn px-5 w-full btn-outline"><FaGoogle className='font-bold text-2xl'></FaGoogle> Continue with Google</button>
+                    </div>
                     <form onSubmit={handleSubmit} className="card-body">
                         <div className="form-control ">
-                            <button className="btn ">Continue with Google</button>
+
                         </div>
-                        <p className='text-center pt-3'>or Sign up with email:</p>
+                        <p className='text-center'>or Sign up with email:</p>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>
@@ -92,7 +96,7 @@ const Register = () => {
 
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Sign Up</button>
+                            <button className="btn btn-neutral">Sign Up</button>
                         </div>
                         <p className='text-center font-semibold '>Already have an account? <NavLink to='/login' className='text-blue-600'> Log in </NavLink></p>
                     </form>

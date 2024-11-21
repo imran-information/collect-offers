@@ -8,7 +8,7 @@ const TopBrands = () => {
 
 
     return (
-        <div className='my-10 bg-accent rounded p-5'>
+        <div data-aos="fade-up" className='my-10 bg-accent rounded p-5 '>
 
             <Marquee pauseOnHover={true} speed={100}>
                 <div className='flex items-center gap-56'>

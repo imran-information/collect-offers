@@ -53,7 +53,7 @@ const NavBar = () => {
             </div>
             <div className="navbar-end">
                 {
-                    user?.email ? <><NavLink to='/profile'><img className='w-14 h-14 border border-accent p-1 rounded-full mr-5' src={user.photoURL} alt="" /></NavLink> <NavLink onClick={handleSignOutUser} to="/login" className="btn btn-neutral text-base font-semibold">Log Out</NavLink> </> : <NavLink to="/login" className="btn text-base font-semibold">Login</NavLink>
+                    user?.email ? <><NavLink to='/profile'><img className='w-14 h-14 border border-accent p-1 rounded-full mr-5' src={user.photoURL} alt="" /></NavLink> <NavLink onClick={handleSignOutUser} to="/login" className="btn btn-neutral text-base font-semibold">Log Out</NavLink> </> : <NavLink to="/login" className="btn btn-neutral text-base font-semibold">Login</NavLink>
                 }
             </div>
         </div>

@@ -1,9 +1,12 @@
 import React, { useContext, useState } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
     const { handleSignInUser, handleGoogleSignInUser } = useContext(AuthContext)
+    const [toggle, setToggle] = useState(false)
+
     const location = useLocation()
     const navigate = useNavigate()
     const [error, setError] = useState({})
@@ -31,6 +34,9 @@ const Login = () => {
 
             })
     }
+
+
+
     return (
         <div className="hero py-10">
             <div className="hero-content flex-col">
@@ -41,7 +47,7 @@ const Login = () => {
                 <div className="card bg-base-100  w-[500px]   shrink-0 shadow-2xl">
                     <h1 className="text-4xl font-bold pt-5 text-center">Login Now!</h1>
                     <div onClick={handleGoogleLogin} className="form-control px-8 pt-10">
-                        <button className="btn ">Login with Google</button>
+                        <button className="btn btn-outline"><FaGoogle className='font-bold text-2xl'></FaGoogle> Login with Google</button>
                     </div>
                     <form onSubmit={handleSubmit} className="card-body">
 
@@ -52,11 +58,11 @@ const Login = () => {
                             </label>
                             <input type="email" name='email' placeholder="email" className="input input-bordered" required />
                         </div>
-                        <div className="form-control">
+                        <div className="form-control relative">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+                            <input type={toggle ? "text" : 'password'} name='password' placeholder="password" className="input input-bordered" required /> <p onClick={() => setToggle(!toggle)} className='absolute top-14 left-[400px] cursor-pointer' href="">{toggle ? <FaEyeSlash /> : <FaEye></FaEye>}</p>
                             {
                                 error?.login && <label className="label text-sm text-red-500">
                                     {error?.login}
@@ -67,7 +73,7 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
+                            <button className="btn btn-neutral">Login</button>
                         </div>
                         <p className='text-center font-semibold '> Don`t have an account?<NavLink to='/register' className='text-blue-600'> Sign Up for free</NavLink></p>
                     </form>
